@@ -10,9 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var emotionImage: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        var unhappyString = "/Users/christophertrev/Desktop/latest.png";
+        emotionImage.image = UIImage(named:unhappyString);
+        
     }
 
     override func didReceiveMemoryWarning() {
