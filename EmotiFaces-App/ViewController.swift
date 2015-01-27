@@ -54,26 +54,7 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
             }
         }
         
-        var requestWithImage = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000/emotion/happy")!)
-        self.httpGet(requestWithImage){
-            (data, error) -> Void in
-            if error != nil {
-                println("error")
-                println(error)
-                //                println(error.localizedDescription)
-            } else {
-                dispatch_sync(dispatch_get_main_queue(), { () -> Void in
-                    println("loading image")
-                    var imageView = UIImageView(frame: self.emotionImage.bounds)
-                    imageView.contentMode = .ScaleAspectFill
-                    imageView.image =  UIImage(data: data)
-                    imageView.center = CGPoint(x: self.view.center.x , y: self.emotionImage.center.y)
-                    self.view.addSubview(imageView)
-
-                })
-                
-            }
-        }
+        self.getPhoto("sad");
         
     }
 
@@ -100,6 +81,8 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
 //        myLabel.text = pickerData[row]
+        println(pickerData[row])
+        self.getPhoto(pickerData[row])
     }
     
     
@@ -119,6 +102,32 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
             }
         }
         task.resume()
+    }
+    
+    func getPhoto(emotion: NSString){
+        
+        var fullURL = "http://localhost:3000/emotion/" + emotion
+        
+        var requestWithImage = NSMutableURLRequest(URL: NSURL(string: fullURL)!)
+        self.httpGet(requestWithImage){
+            (data, error) -> Void in
+            if error != nil {
+                println("error")
+                println(error)
+            } else {
+                dispatch_sync(dispatch_get_main_queue(), { () -> Void in
+                    println("loading image")
+                    var imageView = UIImageView(frame: self.emotionImage.bounds)
+                    imageView.contentMode = .ScaleAspectFill
+                    imageView.image =  UIImage(data: data)
+                    imageView.center = CGPoint(x: self.view.center.x , y: self.emotionImage.center.y)
+                    self.view.addSubview(imageView)
+                    
+                })
+                
+            }
+        }
+        
     }
     
 
