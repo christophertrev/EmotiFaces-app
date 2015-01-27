@@ -15,7 +15,8 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     
     @IBOutlet weak var emotionImage: UIImageView!
     @IBOutlet weak var emotionPicker: UIPickerView!
-    let pickerData = ["happy", "sad"];
+    var pickerData : [String] = [];
+    
 
     
     override func viewDidLoad() {
@@ -23,11 +24,10 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         // Do any additional setup after loading the view, typically from a nib.
         let unhappyString = "/Users/christophertrev/Desktop/latest.png";
         emotionImage.image = UIImage(named:unhappyString);
-        emotionPicker.dataSource = self;
-        emotionPicker.delegate = self;
+
         
-//        var request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000/emotion")!)
-        var request = NSMutableURLRequest(URL: NSURL(string: "http://emotifaces.herokuapp.com/emotion")!)
+        var request = NSMutableURLRequest(URL: NSURL(string: "http://10.7.4.245:3000/emotion")!)
+//        var request = NSMutableURLRequest(URL: NSURL(string: "https://emotifaces.herokuapp.com/emotion")!)
         self.httpGet(request){
             (data, error) -> Void in
             if error != nil {
@@ -36,6 +36,19 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
 //                println(error.localizedDescription)
             } else {
                 println(data)
+                var arr : [String];
+                
+                for (key: String, subJson: JSON) in data {
+                    //Do something you want
+                    println(key, subJson)
+                    self.pickerData.append(subJson.stringValue)
+                    
+                }
+                println(self.pickerData)
+                self.emotionPicker.dataSource = self;
+                self.emotionPicker.delegate = self;
+//                self.pickerData.
+//                self.pickerData = data.string!;
             }
         }
         
@@ -68,7 +81,7 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     
     
 
-    func httpGet(request: NSURLRequest!, callback: (String, String?) -> Void) {
+    func httpGet(request: NSURLRequest!, callback: (JSON, String?) -> Void) {
         var session = NSURLSession.sharedSession()
         var task = session.dataTaskWithRequest(request){
             (data, response, error) -> Void in
@@ -76,8 +89,9 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
                 println(error.debugDescription)
                 callback("", error.localizedDescription)
             } else {
-                var result = NSString(data: data, encoding:
-                    NSASCIIStringEncoding)!
+//                var result = NSString(data: data, encoding:
+//                    NSASCIIStringEncoding)!
+                var result = JSON(data: data)
                 callback(result, nil)
             }
         }
