@@ -67,14 +67,9 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
                     var imageView = UIImageView(frame: self.emotionImage.bounds)
                     imageView.contentMode = .ScaleAspectFill
                     imageView.image =  UIImage(data: data)
-                    imageView.center = self.emotionImage.center
-                    self.emotionImage.addSubview(imageView)
-                    
-                
-                    
-//                    self.emotionImage.contentMode = .ScaleAspectFill
-//                    self.emotionImage.image = UIImage(data: data);
-//                    self.emotionImage
+                    imageView.center = CGPoint(x: self.view.center.x , y: self.emotionImage.center.y)
+                    self.view.addSubview(imageView)
+
                 })
                 
             }
