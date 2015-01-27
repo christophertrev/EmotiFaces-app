@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -20,19 +21,24 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="20"/>
                                 <color key="backgroundColor" red="0.59999999999999998" green="0.20000000000000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W4u-e2-IJQ">
-                                <rect key="frame" x="16" y="534" width="344" height="162"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VrS-qe-ozp">
+                                <rect key="frame" x="26" y="28" width="372" height="316"/>
+                            </imageView>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W4u-e2-IJQ">
+                                <rect key="frame" x="26" y="519" width="363" height="216"/>
                                 <connections>
                                     <outlet property="dataSource" destination="vXZ-lx-hvc" id="riE-zi-u5f"/>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="Am0-nT-ADN"/>
                                 </connections>
                             </pickerView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VrS-qe-ozp">
-                                <rect key="frame" x="26" y="28" width="249" height="194"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="W4u-e2-IJQ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="10" id="IsJ-yO-WIR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="W4u-e2-IJQ" secondAttribute="trailing" constant="10" id="L1U-mt-bUP"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="W4u-e2-IJQ" secondAttribute="bottom" constant="10" id="d2I-5k-lvm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VrS-qe-ozp" secondAttribute="trailing" constant="10" id="iED-wL-awC"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
@@ -42,7 +48,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="454" y="362"/>
+            <point key="canvasLocation" x="454" y="361"/>
         </scene>
     </scenes>
 </document>
