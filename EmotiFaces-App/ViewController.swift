@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Christopher Trevino. All rights reserved.
 //
 
+import Foundation
+//import XCPlayground
 import UIKit
 
 class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
@@ -24,6 +26,19 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         emotionPicker.dataSource = self;
         emotionPicker.delegate = self;
         
+//        var request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000/emotion")!)
+        var request = NSMutableURLRequest(URL: NSURL(string: "http://emotifaces.herokuapp.com/emotion")!)
+        self.httpGet(request){
+            (data, error) -> Void in
+            if error != nil {
+                println("error")
+                println(error)
+//                println(error.localizedDescription)
+            } else {
+                println(data)
+            }
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,19 +46,6 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         // Dispose of any resources that can be recreated.
     }
     
-    
-//    func viewForRow(row:Int, forComponent:Int)
-//    {
-//    float rate = [_exchangeRates[row] floatValue];
-//    float dollars = [_dollarText.text floatValue];
-//    float result = dollars * rate;
-    
-//    NSString *resultString = [[NSString alloc] initWithFormat:
-//    @"%.2f USD = %.2f %@", dollars, result,
-//    _countryNames[row]];
-//    _resultLabel.text = resultString;
-//    }
-
     
     //MARK: - Delegates and data sources
     //MARK: Data Sources
@@ -64,6 +66,25 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
 //        myLabel.text = pickerData[row]
     }
     
+    
+
+    func httpGet(request: NSURLRequest!, callback: (String, String?) -> Void) {
+        var session = NSURLSession.sharedSession()
+        var task = session.dataTaskWithRequest(request){
+            (data, response, error) -> Void in
+            if error != nil {
+                println(error.debugDescription)
+                callback("", error.localizedDescription)
+            } else {
+                var result = NSString(data: data, encoding:
+                    NSASCIIStringEncoding)!
+                callback(result, nil)
+            }
+        }
+        task.resume()
+    }
+    
+
 
     
 }
