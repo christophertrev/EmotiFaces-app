@@ -24,7 +24,14 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         // Do any additional setup after loading the view, typically from a nib.
 //        let unhappyString = "/Users/christophertrev/Desktop/latest.png";
 //        emotionImage.image = UIImage(named:unhappyString);
+        
+        // Setup configuration for View.
+//        self.emotionImage = UIImageView(frame:self.emotionImage.bounds);
         emotionImage.contentMode = .ScaleAspectFit
+//        self.emotionImage.image = UIImage(data:data)
+        emotionImage.center = self.view.center
+        
+
         
         var request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000/emotion")!)
 //        var request = NSMutableURLRequest(URL: NSURL(string: "https://emotifaces.herokuapp.com/emotion")!)
@@ -117,11 +124,18 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
             } else {
                 dispatch_sync(dispatch_get_main_queue(), { () -> Void in
                     println("loading image")
-                    var imageView = UIImageView(frame: self.emotionImage.bounds)
-                    imageView.contentMode = .ScaleAspectFill
-                    imageView.image =  UIImage(data: data)
-                    imageView.center = CGPoint(x: self.view.center.x , y: self.emotionImage.center.y)
-                    self.view.addSubview(imageView)
+//                    self.emotionImage = UIImageView(frame:self.emotionImage.bounds);
+//                    self.emotionImage.contentMode = .ScaleAspectFill
+//                    self.emotionImage.image = UIImage(data:data).
+//                    self.emotionImage.center = self.view.center
+//                    self.view.
+//                    var imageView = UIImageView(frame: self.emotionImage.bounds)
+//                    imageView.contentMode = .ScaleAspectFill
+//                    imageView.image =  UIImage(data: data)
+//                    imageView.center = CGPoint(x: self.view.center.x , y: self.emotionImage.center.y)
+////                    self.view.addSubview(imageView)
+                    self.emotionImage.image = UIImage(data:data)
+//                    self.emotionImage.addSubview(imageView)
                     
                 })
                 
