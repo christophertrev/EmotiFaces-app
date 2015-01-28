@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Capture Emotion-->
         <scene sceneID="qQd-af-idd">
             <objects>
                 <viewController id="usW-uL-Gu6" customClass="CameraViewController" customModule="EmotiFaces_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -14,15 +14,16 @@
                         <viewControllerLayoutGuide type="bottom" id="TZb-Pu-g1Y"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="BMY-KX-WZD">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="vT2-Wu-ntY"/>
+                    <tabBarItem key="tabBarItem" title="Capture Emotion" id="vT2-Wu-ntY"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9NG-RL-egh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-174" y="705"/>
+            <point key="canvasLocation" x="-193.5" y="614.25"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="uqf-ql-dbH">
@@ -43,7 +44,7 @@
             </objects>
             <point key="canvasLocation" x="-994" y="374"/>
         </scene>
-        <!--Item-->
+        <!--See Emotions-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="EmotiFaces_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -83,7 +84,7 @@
                             <constraint firstItem="VrS-qe-ozp" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="28" id="okj-K1-afl"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="T5N-Dh-laD"/>
+                    <tabBarItem key="tabBarItem" title="See Emotions" id="T5N-Dh-laD"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="emotionImage" destination="VrS-qe-ozp" id="c9D-gU-ZLX"/>
