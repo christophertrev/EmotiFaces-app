@@ -58,4 +58,38 @@ class CameraViewController: UIViewController{
         previewLayer?.frame = self.view.layer.frame
         captureSession.startRunning()
     }
+    
+    func focusTo(value : Float) {
+        if let device = captureDevice {
+            if(device.lockForConfiguration(nil)) {
+                device.setFocusModeLockedWithLensPosition(value, completionHandler: { (time) -> Void in
+                    //
+                })
+                device.unlockForConfiguration()
+            }
+        }
+    }
+    
+    let screenWidth = UIScreen.mainScreen().bounds.size.width
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        var anyTouch = touches.anyObject() as UITouch
+        var touchPercent = anyTouch.locationInView(self.view).x / screenWidth
+        focusTo(Float(touchPercent))
+    }
+    
+    override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
+        var anyTouch = touches.anyObject() as UITouch
+        var touchPercent = anyTouch.locationInView(self.view).x / screenWidth
+        focusTo(Float(touchPercent))
+    }
+    
+    func configureDevice() {
+        if let device = captureDevice {
+            device.lockForConfiguration(nil)
+            device.focusMode = .Locked
+            device.unlockForConfiguration()
+        }
+        
+    }
+    
 }
