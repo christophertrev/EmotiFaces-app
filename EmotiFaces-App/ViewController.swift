@@ -33,8 +33,8 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         
 
         
-        var request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000/emotion")!)
-//        var request = NSMutableURLRequest(URL: NSURL(string: "https://emotifaces.herokuapp.com/emotion")!)
+//        var request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000/emotion")!)
+        var request = NSMutableURLRequest(URL: NSURL(string: "https://emotifaces.herokuapp.com/emotion")!)
         self.httpGet(request){
             (data, error) -> Void in
             if error != nil {
