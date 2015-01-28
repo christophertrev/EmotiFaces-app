@@ -15,6 +15,7 @@
 		4852F6211A72F61D00126FD4 /* EmotiFaces_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4852F6201A72F61D00126FD4 /* EmotiFaces_AppTests.swift */; };
 		4852F62B1A72F9FA00126FD4 /* 10428063_10155122623950599_7474945140074512348_n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4852F62A1A72F9FA00126FD4 /* 10428063_10155122623950599_7474945140074512348_n.jpg */; };
 		4852F62D1A72FD8000126FD4 /* latest.png in Resources */ = {isa = PBXBuildFile; fileRef = 4852F62C1A72FD8000126FD4 /* latest.png */; };
+		48B6945F1A78A69A009E532A /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B6945E1A78A69A009E532A /* CameraViewController.swift */; };
 		48E422F31A78325600B8F75E /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E422F21A78325600B8F75E /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		4852F6201A72F61D00126FD4 /* EmotiFaces_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotiFaces_AppTests.swift; sourceTree = "<group>"; };
 		4852F62A1A72F9FA00126FD4 /* 10428063_10155122623950599_7474945140074512348_n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10428063_10155122623950599_7474945140074512348_n.jpg; sourceTree = SOURCE_ROOT; };
 		4852F62C1A72FD8000126FD4 /* latest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = latest.png; path = ../../../latest.png; sourceTree = "<group>"; };
+		48B6945E1A78A69A009E532A /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		48E422F21A78325600B8F75E /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +87,7 @@
 			children = (
 				4852F60A1A72F61D00126FD4 /* AppDelegate.swift */,
 				4852F60C1A72F61D00126FD4 /* ViewController.swift */,
+				48B6945E1A78A69A009E532A /* CameraViewController.swift */,
 				4852F60E1A72F61D00126FD4 /* Main.storyboard */,
 				4852F6111A72F61D00126FD4 /* Images.xcassets */,
 				4852F62A1A72F9FA00126FD4 /* 10428063_10155122623950599_7474945140074512348_n.jpg */,
@@ -224,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48E422F31A78325600B8F75E /* SwiftyJSON.swift in Sources */,
+				48B6945F1A78A69A009E532A /* CameraViewController.swift in Sources */,
 				4852F60D1A72F61D00126FD4 /* ViewController.swift in Sources */,
 				4852F60B1A72F61D00126FD4 /* AppDelegate.swift in Sources */,
 			);
