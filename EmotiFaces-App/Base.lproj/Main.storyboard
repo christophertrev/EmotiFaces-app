@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Capture Emotion" image="pie-bar-icon2" id="vT2-Wu-ntY"/>
+                    <tabBarItem key="tabBarItem" title="Capture Emotion" image="Image-1" id="vT2-Wu-ntY"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9NG-RL-egh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -97,6 +97,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="pie-bar-icon2" width="60" height="60"/>
+        <image name="Image-1" width="30" height="30"/>
     </resources>
 </document>
