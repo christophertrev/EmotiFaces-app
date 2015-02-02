@@ -15,9 +15,8 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     
     @IBOutlet weak var emotionImage: UIImageView!
     @IBOutlet weak var emotionPicker: UIPickerView!
+    @IBOutlet weak var refreshBttn: UIButton!
     var pickerData : [String] = [];
-    
-
     
     override func viewDidLoad() {
         super.viewDidLoad()

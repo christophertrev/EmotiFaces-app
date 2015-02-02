@@ -72,6 +72,16 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="Am0-nT-ADN"/>
                                 </connections>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0S-0o-dcJ">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Refresh!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="143" y="417" width="128" height="42"/>
+                                </variation>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -83,17 +93,28 @@
                             <constraint firstAttribute="trailingMargin" secondItem="VrS-qe-ozp" secondAttribute="trailing" constant="5" id="gQM-9E-9rU"/>
                             <constraint firstItem="VrS-qe-ozp" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="28" id="okj-K1-afl"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="s0S-0o-dcJ"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="s0S-0o-dcJ"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="See " image="happyFace.png" id="T5N-Dh-laD"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="emotionImage" destination="VrS-qe-ozp" id="c9D-gU-ZLX"/>
                         <outlet property="emotionPicker" destination="W4u-e2-IJQ" id="S59-fq-aNY"/>
+                        <outlet property="refreshBttn" destination="s0S-0o-dcJ" id="DCY-8A-Plq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-209" y="-54"/>
+            <point key="canvasLocation" x="-210" y="-54"/>
         </scene>
     </scenes>
     <resources>
