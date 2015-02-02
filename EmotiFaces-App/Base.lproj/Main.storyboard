@@ -84,7 +84,7 @@
                             <constraint firstItem="VrS-qe-ozp" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="28" id="okj-K1-afl"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="See " image="Image-1" id="T5N-Dh-laD"/>
+                    <tabBarItem key="tabBarItem" title="See " image="happyFace.png" id="T5N-Dh-laD"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="emotionImage" destination="VrS-qe-ozp" id="c9D-gU-ZLX"/>
@@ -98,5 +98,6 @@
     </scenes>
     <resources>
         <image name="Image-1" width="30" height="30"/>
+        <image name="happyFace.png" width="30" height="30"/>
     </resources>
 </document>
