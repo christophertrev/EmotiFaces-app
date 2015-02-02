@@ -16,7 +16,8 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     @IBOutlet weak var emotionImage: UIImageView!
     @IBOutlet weak var emotionPicker: UIPickerView!
     @IBOutlet weak var refreshBttn: UIButton!
-    var pickerData : [String] = [];
+    var pickerData : [String] = []
+    var currentEmotion : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,6 +89,7 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
 //        myLabel.text = pickerData[row]
         println(pickerData[row])
+        self.currentEmotion = pickerData[row]
         self.getPhoto(pickerData[row])
     }
     
@@ -144,6 +146,14 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     }
     
 
+    @IBAction func click(sender: UIButton) {
+        
+        //get current emotion
+        var emotionString = "sad"
+        
+        //get photo
+        self.getPhoto(emotionString)
+    }
 
     
 }
