@@ -149,10 +149,10 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     @IBAction func click(sender: UIButton) {
         
         //get current emotion
-        var emotionString = "sad"
+        
         
         //get photo
-        self.getPhoto(emotionString)
+        self.getPhoto(self.currentEmotion)
     }
 
     
