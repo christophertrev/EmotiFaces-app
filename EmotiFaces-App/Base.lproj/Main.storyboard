@@ -97,9 +97,6 @@
                                 <state key="normal" title="Refresh!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="143" y="417" width="128" height="42"/>
-                                </variation>
                                 <connections>
                                     <action selector="click:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fcS-eO-oae"/>
                                 </connections>
@@ -111,18 +108,38 @@
                             <constraint firstItem="VrS-qe-ozp" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="5" id="9Gq-Sj-kLl"/>
                             <constraint firstItem="W4u-e2-IJQ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="10" id="IsJ-yO-WIR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="W4u-e2-IJQ" secondAttribute="trailing" constant="10" id="L1U-mt-bUP"/>
+                            <constraint firstItem="s0S-0o-dcJ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="127" id="czk-Ut-CUM">
+                                <variation key="heightClass=regular-widthClass=compact" constant="120"/>
+                            </constraint>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="W4u-e2-IJQ" secondAttribute="bottom" constant="10" id="d2I-5k-lvm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="s0S-0o-dcJ" secondAttribute="trailing" constant="127" id="dgc-Si-8Id">
+                                <variation key="heightClass=regular-widthClass=compact" constant="120"/>
+                            </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="VrS-qe-ozp" secondAttribute="trailing" constant="5" id="gQM-9E-9rU"/>
                             <constraint firstItem="VrS-qe-ozp" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="28" id="okj-K1-afl"/>
+                            <constraint firstItem="s0S-0o-dcJ" firstAttribute="top" secondItem="VrS-qe-ozp" secondAttribute="bottom" constant="77" id="uh1-hc-omt"/>
+                            <constraint firstItem="W4u-e2-IJQ" firstAttribute="top" secondItem="s0S-0o-dcJ" secondAttribute="bottom" constant="56" id="wbU-jX-V7c"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="s0S-0o-dcJ"/>
                             </mask>
+                            <mask key="constraints">
+                                <exclude reference="czk-Ut-CUM"/>
+                                <exclude reference="dgc-Si-8Id"/>
+                                <exclude reference="uh1-hc-omt"/>
+                                <exclude reference="wbU-jX-V7c"/>
+                            </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="s0S-0o-dcJ"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="czk-Ut-CUM"/>
+                                <include reference="dgc-Si-8Id"/>
+                                <include reference="uh1-hc-omt"/>
+                                <include reference="wbU-jX-V7c"/>
                             </mask>
                         </variation>
                     </view>
